@@ -1,22 +1,14 @@
 """Joshua Gale"""
 
-LETTER_FREQUENCY = 3
-
 
 def main():
-    odd_letter_name = ""
-
     name = get_name()
     letter_frequency = get_letter_frequency()
-    odd_letter_name = get_every_second_letter(name, odd_letter_name, letter_frequency)
-    print(odd_letter_name)
+    print_parts(name, letter_frequency)
 
 
-def get_every_second_letter(name, odd_letter_name, letter_frequency):
-    for char in range(len(name)):
-        if char % letter_frequency == letter_frequency - 1:
-            odd_letter_name += name[char]
-    return odd_letter_name
+def print_parts(name, letter_frequency):
+    print(name[::letter_frequency])
 
 
 def get_name():
