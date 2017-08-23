@@ -25,7 +25,7 @@ def get_letter_frequency():
         try:
             letter_frequency = int(input("What is the interval you want to print letters at?: "))
             isvalid = True
-        except:
+        except ValueError:
             print("invalid letter frequency")
     return letter_frequency
 
