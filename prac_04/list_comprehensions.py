@@ -31,9 +31,7 @@ print(first_initials)
 
 # splits each name and adds the first letter of each part to a tuple
 
-full_initials = [(name.split()[0][0], name.split()[1][0]) for name in
-
-                 full_names]
+full_initials = [(name.split()[0][0], name.split()[1][0]) for name in full_names]
 
 print(full_initials)
 
