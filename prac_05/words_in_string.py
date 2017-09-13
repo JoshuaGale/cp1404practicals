@@ -16,3 +16,4 @@ def main():
         print("{:{}} : {}".format(word, max_length, counted_words[word]))
 
 main()
+
