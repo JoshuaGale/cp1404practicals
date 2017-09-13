@@ -3,7 +3,6 @@ def main():
     sentence = input("please enter a string: ")
     words = sentence.split()
     for word in words:
-        frequency = counted_words.get(word, 1)
         if word in counted_words:
             counted_words[word] += 1
         else:
