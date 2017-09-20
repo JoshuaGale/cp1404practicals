@@ -8,4 +8,14 @@ def main():
     print("odo =", my_car.odometer)
     print(my_car)
 
+    limo = Car(100)
+    limo.add_fuel(20)
+    print(limo.fuel)
+    limo.drive(115)
+    print(limo.odometer)
+    limo.name = "limo"
+    print(limo)
+
+
+
 main()
