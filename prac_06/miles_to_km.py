@@ -9,18 +9,12 @@ class MilesToKilometre(App):
         return self.root
 
     def handle_increment(self, increment):
-        try:
-            result = self.get_validated_miles() + increment
-            self.root.ids.input_miles.text = str(result)
-        except ValueError:
-            self.root.ids.display_label.text = "0.0"
+        result = self.get_validated_miles() + increment
+        self.root.ids.input_miles.text = str(result)
 
     def handle_miles_to_km(self):
-        try:
-            result = self.get_validated_miles() * 1.609344
-            self.root.ids.display_label.text = "{:.3f}".format(result)
-        except ValueError:
-            self.root.ids.display_label.text = "0.0"
+        result = self.get_validated_miles() * 1.609344
+        self.root.ids.display_label.text = "{:.3f}".format(result)
 
     def get_validated_miles(self):
         try:
