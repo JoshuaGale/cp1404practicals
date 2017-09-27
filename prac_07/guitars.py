@@ -19,6 +19,7 @@ def main():
 
     print("These are my guitars: ")
     for i, guitar in enumerate(guitars):
+        # look up and use the Ternary operator
         vintage_string = ""
         if guitar.is_vintage():
             vintage_string = "(vintage)"
