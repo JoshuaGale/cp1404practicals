@@ -12,5 +12,4 @@ class UnreliableCar(Car):
         breakdown_chance = random.randint(0, 100)
         if breakdown_chance > self.reliability:
             return 0
-        super().drive(distance)
-
+        return super().drive(distance)
