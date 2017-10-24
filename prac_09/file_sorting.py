@@ -5,15 +5,13 @@ import os
 def main():
     os.chdir('FilesToSort')
     print(os.listdir('.'))
+    file_extensions = []
 
     for filename in os.listdir('.'):
-        extension_name = os.path.splitext(filename)
-        directory_name = extension_name[1]
-        directory_name = directory_name.replace(".", "")
-        print(directory_name)
-        if directory_name in
-    # os.mkdir()
-
-
+        extension_name = filename.split(".")[1]
+        if extension_name not in file_extensions:
+            file_extensions.append(extension_name)
+            os.mkdir(extension_name)
+        shutil.move(filename, extension_name)
 
 main()
