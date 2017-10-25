@@ -9,7 +9,11 @@ from prac_07.car import Car
 
 def repeat_string(s, n):
     """Repeat string s, n times, with spaces in between."""
-    return s * n
+    word_list = []
+    for i in range(n):
+        word_list.append(s)
+    repeated_string = " ".join(word_list)
+    return repeated_string
 
 
 def is_long_word(word, length=5):
@@ -22,7 +26,7 @@ def is_long_word(word, length=5):
     >>> is_long_word("Python", 6)
     True
     """
-    return len(word) > length
+    return len(word) >= length
 
 
 def run_tests():
@@ -46,12 +50,16 @@ def run_tests():
     # using the value passed in or the default
     # You should test both of these
     test_car = Car(fuel=10)
+    test_car2 = Car()
 
+    assert test_car.fuel == 10
+
+    assert test_car2.fuel == 0
 
 run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
-# doctest.testmod()
+doctest.testmod()
 
 # TODO: 4. Fix the failing is_long_word function
 # (don't change the tests, but the function!)
@@ -64,3 +72,29 @@ run_tests()
 # 'It is an ex parrot.' -> 'It is an ex parrot.'
 # and one more you decide (that's valid!)
 # then write the body of the function so that the tests pass
+
+def format_sentence(sentence):
+    """
+    >>> format_sentence("hello")
+    'Hello.'
+    >>> format_sentence("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> format_sentence("Hello parrot")
+    'Hello parrot.'
+    """
+    starting_character = sentence[0].upper()
+    if sentence[-1] != ".":
+        ending_character = "."
+    else:
+        ending_character = ""
+
+    return starting_character + sentence[1:] + ending_character
+
+
+
+
+assert format_sentence("hello") == "Hello."
+
+assert format_sentence("It is an ex parrot.") == "It is an ex parrot."
+
+assert format_sentence("Hello parrot") == "Hello parrot."
