@@ -46,9 +46,14 @@ def get_fixed_filename(filename):
     filename = filename.replace(" ", "_").replace(".TXT", ".txt")
     new_name = ""
     for i, letter in enumerate(filename):
-        if letter.isupper():
-            new_name += "_"
-        new_name += letter
+        if i != len(filename) + 1:
+            if filename[i - 1] == "_" or filename[i - 1] == "(":
+                new_name += letter.upper()
+            else:
+                new_name += letter
+        if i != len(filename) - 1:
+            if filename[i + 1].isupper() and letter.islower() or filename[i + 1].isupper() and letter.isupper():
+                new_name += "_"
 
     # TODO: step-by-step, consider the problem cases and solve them
 
